@@ -3,30 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bypass VPN Detection</title>
-    <script>
-        function openAd() {
-            let newWindow = window.open('', '_blank');
-            let adUrl = "https://www.profitablecpmrate.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365";
-
-            fetch(adUrl, {
-                method: 'GET',
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-                    'Referer': 'https://www.google.com',
-                    'X-Forwarded-For': '',
-                    'Origin': 'https://www.google.com'
-                }
-            }).then(() => {
-                newWindow.location.href = adUrl;
-            }).catch(() => {
-                newWindow.location.href = adUrl;
-            });
-        }
-    </script>
+    <title>Ad Bypass</title>
 </head>
 <body>
-    <h2>Click the button to view the ad</h2>
-    <button onclick="openAd()">View Ad</button>
+    <h2>Click below to access the ad</h2>
+    <button onclick="bypassAd()">View Ad</button>
+    <script>
+        function bypassAd() {
+            let socket = new WebSocket("wss://www.profitablecpmrate.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365");
+            socket.onopen = function() {
+                window.location.href = "https://www.profitablecpmrate.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365";
+            };
+        }
+    </script>
 </body>
 </html>
