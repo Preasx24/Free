@@ -3,36 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bypass Adsterra VPN Detection</title>
-    <script>
-        function openAd() {
-            let newWindow = window.open('', '_blank');
-            let adUrl = "https://www.profitablecpmrate.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365";
-            
-            // Spoof WebRTC IP detection
-            const originalRTCPeerConnection = window.RTCPeerConnection;
-            window.RTCPeerConnection = function() {
-                return new originalRTCPeerConnection({
-                    iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
-                });
-            };
+    <title>Bypass VPN Detection</title>
 
-            // Spoof headers using a fetch request
-            fetch(adUrl, {
-                method: 'GET',
-                headers: {
-                    'User-Agent': navigator.userAgent.replace("HeadlessChrome", "Chrome"),
-                    'Referer': 'https://www.google.com',
-                    'X-Forwarded-For': '8.8.8.8', // Fake IP
-                    'Origin': 'https://www.google.com'
+    <script>
+        function disableWebRTC() {
+            // Override WebRTC APIs to prevent IP leaks
+            Object.defineProperty(navigator, 'mediaDevices', {
+                get: () => undefined
+            });
+
+            Object.defineProperty(window, 'RTCPeerConnection', {
+                get: () => function() {
+                    return {
+                        createDataChannel: () => {},
+                        createOffer: () => new Promise(() => {}),
+                        setLocalDescription: () => {},
+                        setRemoteDescription: () => {},
+                        close: () => {}
+                    };
                 }
-            }).then(() => {
-                newWindow.location.href = adUrl;
-            }).catch(() => {
-                newWindow.location.href = adUrl;
             });
         }
+
+        function openAd() {
+            disableWebRTC(); // Ensure WebRTC is disabled
+
+            let adWindow = window.open('', '_blank');
+            let adUrl = "https://www.profitablecpmrate.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365";
+
+            // Spoof Headers
+            let headers = new Headers({
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Referer': 'https://www.google.com',
+                'X-Forwarded-For': '142.251.32.1', // Fake Google IP
+                'Origin': 'https://www.google.com',
+                'Accept-Language': 'en-US,en;q=0.9'
+            });
+
+            fetch(adUrl, { method: 'GET', headers })
+                .then(() => adWindow.location.href = adUrl)
+                .catch(() => adWindow.location.href = adUrl);
+        }
     </script>
+
 </head>
 <body>
     <h2>Click the button to view the ad</h2>
