@@ -20,15 +20,30 @@
             reader.onload = function(e) {
                 let content = e.target.result;
                 
+                // Try Base64 decoding if the content is potentially Base64-encoded
+                let decodedContent = tryBase64Decode(content);
+                if (decodedContent) {
+                    content = decodedContent;
+                }
+
                 try {
-                    let parsedData = JSON.parse(content); // Assuming HC files use JSON
+                    let parsedData = JSON.parse(content); // Attempt to parse as JSON
                     displayData(parsedData);
                 } catch (error) {
-                    document.getElementById("output").textContent = "Could not parse the HC file. It may be encoded.";
+                    document.getElementById("output").textContent = "Could not parse the HC file. It may need a different decoding method.";
                 }
             };
             reader.readAsText(file);
         });
+
+        function tryBase64Decode(content) {
+            // Check if the content looks like Base64 (length and character set)
+            const base64Regex = /^[A-Za-z0-9+/=]+$/;
+            if (base64Regex.test(content) && content.length % 4 === 0) {
+                return atob(content); // Decode Base64 content
+            }
+            return null; // Return null if not Base64
+        }
 
         function displayData(data) {
             let output = `
