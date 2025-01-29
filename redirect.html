@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Bypass</title>
+    <title>Bypass VPN Detection</title>
 </head>
 <body>
     <h2>Click below to access the ad</h2>
-    <button onclick="bypassAd()">View Ad</button>
+    <form id="adForm" action="https://www.profitablecpmrate.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365" method="POST" target="_blank">
+        <input type="submit" value="View Ad">
+    </form>
     <script>
-        function bypassAd() {
-            let socket = new WebSocket("wss://www.profitablecpmrate.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365");
-            socket.onopen = function() {
-                window.location.href = "https://www.profitablecpmrate.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365";
-            };
-        }
+        setTimeout(() => {
+            document.getElementById("adForm").submit();
+        }, 3000); // Auto-submits after 3 sec
     </script>
 </body>
 </html>
