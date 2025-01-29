@@ -3,181 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FREE CRUNCHYROLL PREMIUM ACCOUNTS 🌹</title>
-
-    <script type='text/javascript' src='//conductorhimselfwhipped.com/06/70/0a/06700ae74ed6d9035f7f071031360cf5.js'></script>
-
-    <script>
-        const WAIT_TIME = 8; // Countdown time in seconds
-        const ACC_URL = "https://raw.githubusercontent.com/Preasx24/...../refs/heads/main/ACC.txt";
-        let accounts = [];
-        let usedAccounts = new Set();
-
-        async function fetchAccounts() {
-            try {
-                const response = await fetch(ACC_URL);
-                const text = await response.text();
-                accounts = text.trim().split("\n");
-            } catch (error) {
-                alert("Failed to fetch accounts. Please try again later.");
-                console.error(error);
-            }
-        }
-
-        function playClickSound() {
-            const beep = new Audio('beep.wav');
-            beep.play();
-        }
-
-        function showAdButton() {
-            playClickSound();
-            document.getElementById('ad-instructions').style.display = 'block';
-            document.getElementById('get-acc-btn').style.display = 'none';
-            localStorage.setItem('adClickedTime', Date.now());
-        }
-
-        function startCountdown() {
-            playClickSound();
-            window.open("redirect.html", '_blank'); // Open the redirection page instead of the direct ad
-        }
-
-        function checkCountdown() {
-            playClickSound();
-            const adClickedTime = localStorage.getItem('adClickedTime');
-
-            if (!adClickedTime) {
-                alert('You need to click the ad button first!');
-                return;
-            }
-
-            const elapsedTime = (Date.now() - adClickedTime) / 1000;
-
-            if (elapsedTime < WAIT_TIME) {
-                alert(`You didn't wait for ${WAIT_TIME} seconds. Please try again.`);
-            } else {
-                revealAccount();
-                document.getElementById('ad-instructions').style.display = 'none';
-            }
-        }
-
-        function revealAccount() {
-            if (accounts.length === usedAccounts.size) {
-                alert("No more accounts available. Please try again later.");
-                return;
-            }
-
-            let accountIndex;
-            do {
-                accountIndex = Math.floor(Math.random() * accounts.length);
-            } while (usedAccounts.has(accountIndex));
-
-            usedAccounts.add(accountIndex);
-
-            const account = accounts[accountIndex];
-            document.getElementById('account-info').innerHTML = `
-                <h2>Your Free Crunchyroll Premium Account:</h2>
-                <div class="account-details">
-                    ${account}
-                </div>
-            `;
-            document.getElementById('account-info').style.display = 'block';
-        }
-
-        function reloadPage() {
-            playClickSound();
-            location.reload();
-        }
-
-        window.onload = fetchAccounts;
-    </script>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        .logo {
-            width: 150px;
-            margin: 20px auto;
-        }
-        h1 {
-            color: #FF6347;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-        .instructions {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: inline-block;
-            text-align: left;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #FF6347;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            margin: 10px;
-        }
-        button:hover {
-            background-color: #FF4500;
-        }
-        #ad-instructions {
-            display: none;
-            margin-top: 20px;
-        }
-        #account-info {
-            display: none;
-            margin-top: 20px;
-        }
-        .account-details {
-            background-color: #FFFAF0;
-            border: 1px solid #FF6347;
-            padding: 15px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-    </style>
+    <title>HC File Sniffer</title>
 </head>
 <body>
-    <!-- Logo -->
-    <img src="dtech-logo.png" alt="D-TECH Logo" class="logo">
-    <h1>FREE CRUNCHYROLL PREMIUM ACCOUNTS 🌹</h1>
-    <p>Support us by viewing an ad! Follow the steps below to unlock your account:</p>
-    
-    <div class="instructions">
-        <ol>
-            <li>Click the "Get Free Account" button to start.</li>
-            <li>Click "View Ad" and wait **8 seconds** or until the ad fully displays.</li>
-            <li>Return here and click "I've Viewed the Ad" to reveal your free account.</li>
-        </ol>
-    </div>
+    <h2>Upload Your .hc File</h2>
+    <input type="file" id="fileInput" accept=".hc">
+    <h3>Extracted Config:</h3>
+    <pre id="output"></pre>
 
-    <!-- Get Account Button -->
-    <button id="get-acc-btn" onclick="showAdButton()">Get Free Account</button>
+    <script>
+        document.getElementById("fileInput").addEventListener("change", function(event) {
+            let file = event.target.files[0];
+            if (!file) return;
 
-    <!-- Ad Button and Instructions -->
-    <div id="ad-instructions">
-        <p>Click the button below to view the ad. Wait **8 seconds** or until the ad fully displays before returning here.</p>
-        <button onclick="startCountdown()">View Ad</button>
-        <p>After viewing the ad, return here and click the button below:</p>
-        <button onclick="checkCountdown()">I've Viewed the Ad</button>
-    </div>
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                let content = e.target.result;
+                
+                try {
+                    let parsedData = JSON.parse(content); // Assuming HC files use JSON
+                    displayData(parsedData);
+                } catch (error) {
+                    document.getElementById("output").textContent = "Could not parse the HC file. It may be encoded.";
+                }
+            };
+            reader.readAsText(file);
+        });
 
-    <!-- Account Information -->
-    <div id="account-info"></div>
-
-    <!-- Reload Button -->
-    <button onclick="reloadPage()">Reload Page</button>
-
-    <script type='text/javascript' src='//conductorhimselfwhipped.com/61/51/71/61517150132ff41edb773555ec988118.js'></script>
-
+        function displayData(data) {
+            let output = `
+[ > ] Expired Date : ${data.expiry || "Unknown"}
+[ > ] SSH : ${data.ssh || "Not Found"}
+[ > ] SNI : ${data.sni || "Not Found"}
+[ > ] Public Key : ${data.public_key || "Not Found"}
+[ > ] HC Version : ${data.version || "Unknown"}
+[ > ] Tunnel Settings : ${data.tunnel || "Not Found"}
+`;
+            document.getElementById("output").textContent = output;
+        }
+    </script>
 </body>
-    </html>
+</html>
