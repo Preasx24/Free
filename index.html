@@ -28,37 +28,18 @@
             padding: 15px;
             margin: 10px 0;
             border-radius: 5px;
-        }
-        .faq h3 {
-            margin-top: 0;
-        }
-        .form-container {
-            background: #1f1f1f;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            text-align: center;
-        }
-        textarea {
-            width: 90%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            background: #333;
-            color: #fff;
-            font-size: 16px;
-        }
-        .send-btn {
-            background: #00c6ff;
-            padding: 10px;
-            color: #000;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
         }
-        .back-btn {
+        .faq h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .answer {
+            display: none;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+        .ask-btn, .back-btn {
             display: block;
             background: #00c6ff;
             padding: 10px;
@@ -71,14 +52,13 @@
         }
     </style>
     <script>
-        function sendEmail() {
-            var question = document.getElementById("userQuestion").value;
-            if (question.trim() === "") {
-                alert("Please enter a question before sending.");
-                return;
+        function toggleAnswer(id) {
+            var answer = document.getElementById(id);
+            if (answer.style.display === "none") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
             }
-            var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
-            window.location.href = mailtoLink;
         }
     </script>
 </head>
@@ -87,23 +67,22 @@
     <header>📘 NMU Student Guides</header>
 
     <div class="container">
-        <div class="faq">
+        <div class="faq" onclick="toggleAnswer('q1')">
             <h3>📌 How do I apply to NMU?</h3>
-            <p>You can apply online at <a href="https://www.mandela.ac.za/Study-at-Mandela/Application" target="_blank">NMU Application Portal</a>. Submit all required documents before the deadline.</p>
+            <p class="answer" id="q1">You can apply online at <a href="https://www.mandela.ac.za/Study-at-Mandela/Application" target="_blank">NMU Application Portal</a>. Submit all required documents before the deadline.</p>
         </div>
 
-        <div class="faq">
+        <div class="faq" onclick="toggleAnswer('q2')">
             <h3>🔑 How do I access the NMU student portal?</h3>
-            <p>Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> and log in using 'mandela\\s123456789' with your network password.</p>
+            <p class="answer" id="q2">Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> and log in using 'mandela\\s123456789' with your network password.</p>
         </div>
 
-        <!-- Question Submission Form -->
-        <div class="form-container">
-            <h3>❓ Have a Question?</h3>
-            <textarea id="userQuestion" rows="4" placeholder="Type your question here..."></textarea><br>
-            <button class="send-btn" onclick="sendEmail()">📩 Send Question</button>
+        <div class="faq" onclick="toggleAnswer('q3')">
+            <h3>🏠 Where can I find student accommodation?</h3>
+            <p class="answer" id="q3">Check NMU's official accommodation list <a href="https://www.mandela.ac.za/Study-at-Mandela/Student-Housing" target="_blank">here</a> or contact private residence options.</p>
         </div>
 
+        <a href="ask.html" class="ask-btn">❓ Ask a Question</a>
         <a href="index.html" class="back-btn">⬅ Back to Home</a>
     </div>
 
