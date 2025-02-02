@@ -88,26 +88,32 @@
         }
     </style>
     <script>
-        function sendEmail() {
-            var question = document.getElementById("userQuestion").value;
-            if (question.trim() === "") {
-                alert("❗ Please enter a question before sending.");
-                return;
-            }
-            var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
-            window.location.href = mailtoLink;
+    function sendEmail() {
+        var question = document.getElementById("userQuestion").value;
+        if (question.trim() === "") {
+            alert("❗ Please enter a question before sending.");
+            return;
         }
 
-        function openAdAndRedirect() {
-            // Open the ad in a new tab first
-            window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
-            
-            // Delay the redirection by 2 seconds
-            setTimeout(function() {
-                window.location.href = "guides.html";
-            }, 2000); // 2000 milliseconds = 2 seconds
+        // Ensure the question ends with a comma
+        if (!question.trim().endsWith(',')) {
+            question = question.trim() + ',';
         }
-    </script>
+
+        var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
+        window.location.href = mailtoLink;
+    }
+
+    function openAdAndRedirect() {
+        // Open the ad in a new tab first
+        window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
+
+        // Delay the redirection by 2 seconds
+        setTimeout(function() {
+            window.location.href = "guides.html";
+        }, 2000); // 2000 milliseconds = 2 seconds
+    }
+</script>
 </head>
 <body>
 
