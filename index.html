@@ -3,59 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HC File Sniffer</title>
-</head>
-<body>
-    <h2>Upload Your .hc File</h2>
-    <input type="file" id="fileInput" accept=".hc">
-    <h3>Extracted Config:</h3>
-    <pre id="output"></pre>
-
-    <script>
-        document.getElementById("fileInput").addEventListener("change", function(event) {
-            let file = event.target.files[0];
-            if (!file) return;
-
-            let reader = new FileReader();
-            reader.onload = function(e) {
-                let content = e.target.result;
-                
-                // Try Base64 decoding if the content is potentially Base64-encoded
-                let decodedContent = tryBase64Decode(content);
-                if (decodedContent) {
-                    content = decodedContent;
-                }
-
-                try {
-                    let parsedData = JSON.parse(content); // Attempt to parse as JSON
-                    displayData(parsedData);
-                } catch (error) {
-                    document.getElementById("output").textContent = "Could not parse the HC file. It may need a different decoding method.";
-                }
-            };
-            reader.readAsText(file);
-        });
-
-        function tryBase64Decode(content) {
-            // Check if the content looks like Base64 (length and character set)
-            const base64Regex = /^[A-Za-z0-9+/=]+$/;
-            if (base64Regex.test(content) && content.length % 4 === 0) {
-                return atob(content); // Decode Base64 content
-            }
-            return null; // Return null if not Base64
+    <title>NMU Guides | D-TECH Student Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
         }
-
-        function displayData(data) {
-            let output = `
-[ > ] Expired Date : ${data.expiry || "Unknown"}
-[ > ] SSH : ${data.ssh || "Not Found"}
-[ > ] SNI : ${data.sni || "Not Found"}
-[ > ] Public Key : ${data.public_key || "Not Found"}
-[ > ] HC Version : ${data.version || "Unknown"}
-[ > ] Tunnel Settings : ${data.tunnel || "Not Found"}
-`;
-            document.getElementById("output").textContent = output;
+        header {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+        .faq {
+            background: #1f1f1f;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .faq h3 {
+            margin-top: 0;
+        }
+        .form-container {
+            background: #1f1f1f;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+        }
+        .send-btn {
+            background: #00c6ff;
+            padding: 10px;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .back-btn {
+            display: block;
+            background: #00c6ff;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function sendEmail() {
+            var question = document.getElementById("userQuestion").value;
+            if (question.trim() === "") {
+                alert("Please enter a question before sending.");
+                return;
+            }
+            var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
+            window.location.href = mailtoLink;
         }
     </script>
+</head>
+<body>
+
+    <header>📘 NMU Student Guides</header>
+
+    <div class="container">
+        <div class="faq">
+            <h3>📌 How do I apply to NMU?</h3>
+            <p>You can apply online at <a href="https://www.mandela.ac.za/Study-at-Mandela/Application" target="_blank">NMU Application Portal</a>. Submit all required documents before the deadline.</p>
+        </div>
+
+        <div class="faq">
+            <h3>🔑 How do I access the NMU student portal?</h3>
+            <p>Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> and log in using 'mandela\\s123456789' with your network password.</p>
+        </div>
+
+        <!-- Question Submission Form -->
+        <div class="form-container">
+            <h3>❓ Have a Question?</h3>
+            <textarea id="userQuestion" rows="4" placeholder="Type your question here..."></textarea><br>
+            <button class="send-btn" onclick="sendEmail()">📩 Send Question</button>
+        </div>
+
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </div>
+
 </body>
 </html>
