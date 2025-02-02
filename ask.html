@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a Question | D-TECH Student Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 198, 255, 0.5);
+        }
+        h2 {
+            color: #00c6ff;
+        }
+        .info {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .step {
+            margin: 10px 0;
+            background: #282828;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #333;
+            color: #fff;
+            font-size: 16px;
+        }
+        .send-btn {
+            background: #00c6ff;
+            padding: 12px;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .back-btn {
+            display: block;
+            background: #00c6ff;
+            padding: 10px;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function sendEmail() {
+            var question = document.getElementById("userQuestion").value;
+            if (question.trim() === "") {
+                alert("Please enter a question before sending.");
+                return;
+            }
+            var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
+            window.location.href = mailtoLink;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>❓ Ask a Question</h2>
+        <p class="info">Follow these simple steps to submit your question:</p>
+
+        <div class="step">📌 **Step 1:** Type your question below.</div>
+        <div class="step">📩 **Step 2:** Press "Send Question".</div>
+        <div class="step">📧 **Step 3:** Your email app will **automatically open** with your question filled in.</div>
+        <div class="step">✅ **Step 4:** Simply **press send** in your email app. That's it!</div>
+
+        <textarea id="userQuestion" placeholder="Type your question here..."></textarea><br>
+        <button class="send-btn" onclick="sendEmail()">📩 Send Question</button>
+
+        <a href="guides.html" class="back-btn">⬅ Back to Guides</a>
+    </div>
+
+</body>
+</html>
