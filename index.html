@@ -44,7 +44,7 @@
         .show {
             max-height: 200px;
         }
-        .ask-btn, .back-btn {
+        .ask-btn, .back-btn, .download-btn, .terms-btn {
             display: block;
             background: #00c6ff;
             padding: 10px;
@@ -71,7 +71,10 @@
     <header>📘 NMU Student Guides</header>
 
     <div class="container">
-        <!-- Ask a Question Button Moved to the Top -->
+        <!-- Download Documents Button at the Top -->
+        <a href="doc.html" class="download-btn">📥 Download Documents</a>
+
+        <!-- Ask a Question Button -->
         <a href="ask.html" class="ask-btn">❓ Ask a Question</a>
 
         <div class="faq" onclick="toggleAnswer('q1')">
@@ -107,6 +110,9 @@
                 No, nothing is required for you to attend.
             </p>
         </div>
+
+        <!-- Terms and Conditions Button at the Bottom -->
+        <a href="term.html" class="terms-btn">📜 Terms and Conditions</a>
 
         <a href="index.html" class="back-btn">⬅ Back to Home</a>
     </div>
