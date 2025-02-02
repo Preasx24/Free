@@ -53,7 +53,7 @@
             font-weight: bold;
             border-radius: 5px;
             text-align: center;
-            margin-top: 20px;
+            margin: 15px 0;
         }
     </style>
     <script>
@@ -71,30 +71,43 @@
     <header>📘 NMU Student Guides</header>
 
     <div class="container">
-      <<div class="faq" onclick="toggleAnswer('q82')">
-        <h3>📌 When is the orientation for Humanities Students at NMU?</h3>
-        <p class="answer" id="q82">There's no specific date of which you are required to attend and not attend
-All there is to know is that you should attend from 3th of February to the 7th of February at South Campus
-N for any details Download the nmu humanities orientation timetable here
-https://orientation.mandela.ac.za/orientation/media/Store/documents/Tmetables/2025-2025-Humanities-Orientation-Faculty-Timetable-final.pdf</p>
+        <!-- Ask a Question Button Moved to the Top -->
+        <a href="ask.html" class="ask-btn">❓ Ask a Question</a>
+
+        <div class="faq" onclick="toggleAnswer('q1')">
+            <h3>📌 When is the orientation for Humanities Students at NMU?</h3>
+            <p class="answer" id="q1">
+                There's no specific date of which you are required to attend and not attend.
+                All there is to know is that you should attend from the 3rd of February to the 7th of February at South Campus.
+                For more details, download the NMU Humanities Orientation timetable 
+                <a href="https://orientation.mandela.ac.za/orientation/media/Store/documents/Tmetables/2025-2025-Humanities-Orientation-Faculty-Timetable-final.pdf" target="_blank">here</a>.
+            </p>
+        </div>
 
         <div class="faq" onclick="toggleAnswer('q2')">
             <h3>🔑 How do I access the NMU student portal?</h3>
-            <p class="answer" id="q2">Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> and log in using 'mandela\\s123456789' with your network password.</p>
+            <p class="answer" id="q2">
+                Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> 
+                and log in using 'mandela\\s123456789' with your network password.
+            </p>
         </div>
 
         <div class="faq" onclick="toggleAnswer('q3')">
             <h3>🏠 Where can I find student accommodation?</h3>
-            <p class="answer" id="q3">Check NMU's official accommodation list <a href="https://www.mandela.ac.za/Study-at-Mandela/Student-Housing" target="_blank">here</a> or contact private residence options.</p>
+            <p class="answer" id="q3">
+                Check NMU's official accommodation list 
+                <a href="https://www.mandela.ac.za/Study-at-Mandela/Student-Housing" target="_blank">here</a> 
+                or contact private residence options.
+            </p>
         </div>
 
-<<div class="faq" onclick="toggleAnswer('q82')">
-        <h3>📌 Are the any documents required when you attend the orientation to show that you are a student at NMU?</h3>
-        <p class="answer" id="q82">No , nothing is required for you to attend</p>
-    </div>
+        <div class="faq" onclick="toggleAnswer('q4')">
+            <h3>📌 Are there any documents required for orientation to prove you're an NMU student?</h3>
+            <p class="answer" id="q4">
+                No, nothing is required for you to attend.
+            </p>
+        </div>
 
-
-        <a href="ask.html" class="ask-btn">❓ Ask a Question</a>
         <a href="index.html" class="back-btn">⬅ Back to Home</a>
     </div>
 
