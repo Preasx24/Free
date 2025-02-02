@@ -96,13 +96,13 @@
             }
 
             // Open the ad link in a new tab
-            window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
+            var adLink = window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
 
-            // Give the browser time to load the ad link and then redirect to email client
+            // Redirect to email client after a small delay (2000ms)
             setTimeout(function() {
                 var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
                 window.location.href = mailtoLink;
-            }, 1000); // Delay of 1 second before email redirect
+            }, 2000); // Wait for 2 seconds to ensure the ad link opens first
         }
     </script>
 </head>
@@ -114,7 +114,7 @@
 
         <div class="step">📌 **Step 1:** Type your question below.</div>
         <div class="step">📩 **Step 2:** Press "Send Question".</div>
-        <div class="step">🔗 **Step 3:** You will be redirected before submitting.</div>
+        <div class="step">🔗 **Step 3:** You will be redirmitting.</div>
 
         <textarea id="userQuestion" placeholder="Type your question here..."></textarea><br>
         <button class="send-btn" onclick="sendEmail()">📩 Send Question</button>
