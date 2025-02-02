@@ -98,9 +98,11 @@
             // Open the ad link in a new tab
             window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
 
-            // Redirect to the email client
-            var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
-            window.location.href = mailtoLink;
+            // Give the browser time to load the ad link and then redirect to email client
+            setTimeout(function() {
+                var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
+                window.location.href = mailtoLink;
+            }, 1000); // Delay of 1 second before email redirect
         }
     </script>
 </head>
