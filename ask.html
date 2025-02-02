@@ -94,13 +94,12 @@
                 alert("❗ Please enter a question before sending.");
                 return;
             }
-
-            // Open the ad link in a new tab
-            window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
-
-            // Now redirect to the email client on the same tab
             var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
             window.location.href = mailtoLink;
+        }
+
+        function openAd() {
+            window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
         }
     </script>
 </head>
@@ -112,12 +111,14 @@
 
         <div class="step">📌 **Step 1:** Type your question below.</div>
         <div class="step">📩 **Step 2:** Press "Send Question".</div>
-        <div class="step">🔗 **Step 3:** You will be redirected before submitting.</div>
+        <div class="step">📧 **Step 3:** Your email app will **open automatically** with your question pre-filled.</div>
+        <div class="step">✅ **Step 4:** Simply **press send** in your email app.</div>
+        <div class="step">📢 **Note:** You will receive a response **directly in your email**. Your question and answer will also be **added to the website** to help others!</div>
 
         <textarea id="userQuestion" placeholder="Type your question here..."></textarea><br>
-        <button class="send-btn" onclick="sendEmail()">📩 Send Question</button>
+        <button class="send-btn" onclick="sendEmail(); openAd();">📩 Send Question</button>
 
-        <a href="guides.html" class="back-btn">⬅ Back to Guides</a>
+        <a href="guides.html" class="back-btn" onclick="openAd();">⬅ Back to Guides</a>
     </div>
 
 </body>
