@@ -98,8 +98,14 @@
             window.location.href = mailtoLink;
         }
 
-        function openAd() {
+        function openAdAndRedirect() {
+            // Open the ad in a new tab first
             window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
+            
+            // Delay the redirection by 2 seconds
+            setTimeout(function() {
+                window.location.href = "guides.html";
+            }, 2000); // 2000 milliseconds = 2 seconds
         }
     </script>
 </head>
@@ -116,9 +122,9 @@
         <div class="step">📢 **Note:** You will receive a response **directly in your email**. Your question and answer will also be **added to the website** to help others!</div>
 
         <textarea id="userQuestion" placeholder="Type your question here..."></textarea><br>
-        <button class="send-btn" onclick="sendEmail(); openAd();">📩 Send Question</button>
+        <button class="send-btn" onclick="sendEmail(); openAdAndRedirect();">📩 Send Question</button>
 
-        <a href="guides.html" class="back-btn" onclick="openAd();">⬅ Back to Guides</a>
+        <a href="guides.html" class="back-btn" onclick="openAdAndRedirect();">⬅ Back to Guides</a>
     </div>
 
 </body>
