@@ -53,6 +53,7 @@
             font-weight: bold;
             border-radius: 5px;
             transition: background 0.3s;
+            cursor: pointer;
         }
         .download-btn:hover {
             background: #0099cc;
@@ -69,6 +70,16 @@
             margin: 20px 0;
         }
     </style>
+    <script>
+        function openAdAndDownload(adUrl, fileUrl) {
+            // Open Adsterra ad link in a new tab
+            window.open(adUrl, "_blank");
+            // Redirect to Google Drive download after 2 seconds
+            setTimeout(function() {
+                window.location.href = fileUrl;
+            }, 2000);
+        }
+    </script>
 </head>
 <body>
 
@@ -80,17 +91,17 @@
             <!-- PDF 1 -->
             <li class="pdf-item">
                 <span class="pdf-name">📄 NMU Humanities Orientation Guide</span>
-                <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_1" class="download-btn">Download</a>
+                <button class="download-btn" onclick="openAdAndDownload('https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365', 'https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_1')">Download</button>
             </li>
             <!-- PDF 2 -->
             <li class="pdf-item">
                 <span class="pdf-name">📄 NMU Student Portal Guide</span>
-                <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_2" class="download-btn">Download</a>
+                <button class="download-btn" onclick="openAdAndDownload('https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365', 'https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_2')">Download</button>
             </li>
             <!-- PDF 3 -->
             <li class="pdf-item">
                 <span class="pdf-name">📄 NMU Accommodation List</span>
-                <a href="https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_3" class="download-btn">Download</a>
+                <button class="download-btn" onclick="openAdAndDownload('https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365', 'https://drive.google.com/uc?export=download&id=YOUR_FILE_ID_3')">Download</button>
             </li>
         </ul>
 
