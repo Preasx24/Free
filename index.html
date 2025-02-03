@@ -59,7 +59,14 @@
     <script>
         function toggleAnswer(id) {
             var answer = document.getElementById(id);
-            answer.classList.toggle("show");
+            if (answer.classList.contains("show")) {
+                answer.classList.remove("show");
+            } else {
+                document.querySelectorAll('.answer').forEach(function(item) {
+                    item.classList.remove('show');
+                });
+                answer.classList.add("show");
+            }
         }
     </script>
 
@@ -71,40 +78,24 @@
     <header>📘 NMU Student Guides</header>
 
     <div class="container">
-        <!-- Download Documents Button at the Top -->
         <a href="doc.html" class="download-btn">📥 Download Documents</a>
-
-        <!-- Ask a Question Button -->
         <a href="ask.html" class="ask-btn">❓ Ask a Question</a>
 
         <div class="faq" onclick="toggleAnswer('q1')">
             <h3>📌 When is the orientation for Humanities Students at NMU?</h3>
             <p class="answer" id="q1">
-                There's no specific date of which you are required to attend and not attend.
-                All there is to know is that you should attend from the 3rd of February to the 7th of February at South Campus.
-                For more details, download the NMU Humanities Orientation timetable 
+                Orientation runs from the 3rd to the 7th of February at South Campus. 
+                For details, download the NMU Humanities Orientation timetable 
                 <a href="https://orientation.mandela.ac.za/orientation/media/Store/documents/Tmetables/2025-2025-Humanities-Orientation-Faculty-Timetable-final.pdf" target="_blank">here</a>.
             </p>
         </div>
-         
-       <div class="faq" onclick="toggleAnswer('q2')">
-            <h3>🔑Hi, does the nsfas have a  budget for loan? Coz all statuses for students loan is loan in progress  </h3>
+
+        <div class="faq" onclick="toggleAnswer('q2')">
+            <h3>🔑 Does NSFAS have a budget for student loans?</h3>
             <p class="answer" id="q2">
-                Yes, NSFAS has a budget for student loans in 2025. These loans are for students with a household income between R350,001 and R600,000. Eligibility is based on financial need and academic performance.
-
-The "Loan in Progress" status means your application is under review. NSFAS is verifying your financial and academic details before approval. Ensure all required documents are submitted to avoid delays.
-
-Over 17,000 loan applications have been received, so processing may take time. Check your NSFAS portal regularly for updates.
-
-For more info: https://www.nsfas.org.za/content/.
-            </p>
-        </div>
-
-        <div class="faq" onclick="toggleAnswer('q5')">
-            <h3>🔑 How do I access the NMU student portal?</h3>
-            <p class="answer" id="q5">
-                Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> 
-                and log in using 'mandela\\s123456789' with your network password.
+                Yes, NSFAS has a budget for student loans in 2025 for those with a household income between R350,001 and R600,000. 
+                The "Loan in Progress" status means your application is under review. Check your NSFAS portal regularly for updates.
+                <br>For more info: <a href="https://www.nsfas.org.za/content/" target="_blank">NSFAS Website</a>.
             </p>
         </div>
 
@@ -116,72 +107,40 @@ For more info: https://www.nsfas.org.za/content/.
                 or contact private residence options.
             </p>
         </div>
-                <div class="faq" onclick="toggleAnswer('q9')">
-            <h3>🔑 What is the link for change of course nmu </h3>
-            <p class="answer" id="q9">
-              
-To change your course at Nelson Mandela University (NMU), you'll need to complete the "Change of Qualification Application Form." You can download this form directly from NMU's website:
-
-After completing the form, submit it to your Faculty Administrative Officer for further processing. If you need assistance or have questions, you can contact NMU at +27 (0) 41 504 1111 or via email at info@mandela.ac.za.
-
-Download the form here <a
-href="https://www.mandela.ac.za/getmedia/933e1d71-573e-49e5-8300-1ff9ac7a10bf/08-CHANGE-OF-QUALIFICATION-APPLICATION-FORM?disposition=attachment" target="_blank">here</a>
-            </p>
-        </div>
-                <div class="faq" onclick="toggleAnswer('q5')">
-            <h3>🔑 class="answer" id="q5">
-                Which programmes are full at NMU at the moment? ?</h3>
-            <p 
-NMU has closed applications for 2025, and some programmes are full. They haven’t listed which ones, so check directly with NMU’s admissions office for availability. <a
-hreft="https://www.mandela.ac.za/study-at-mandela/application/apply-undergraduate" target="_blank">here</a>.
-            </p>
-        </div>
-                <div class="faq" onclick="toggleAnswer('q5')">
-            <h3>🔑 How do I access the NMU student portal?</h3>
-            <p class="answer" id="q5">
-                Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> 
-                and log in using 'mandela\\s123456789' with your network password.
-            </p>
-        </div>
-               <div class="faq" onclick="toggleAnswer('q5')">
-            <h3>🔑 How do I access the NMU student portal?</h3>
-            <p class="answer" id="q5">
-                Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> 
-                and log in using 'mandela\\s123456789' with your network password.
-            </p>
-        </div>
-                <div class="faq" onclick="toggleAnswer('q5')">
-            <h3>🔑 How do I access the NMU student portal?</h3>
-            <p class="answer" id="q5">
-                Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> 
-                and log in using 'mandela\\s123456789' with your network password.
-            </p>
-        </div>
-                <div class="faq" onclick="toggleAnswer('q5')">
-            <h3>🔑 How do I access the NMU student portal?</h3>
-            <p class="answer" id="q5">
-                Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> 
-                and log in using 'mandela\\s123456789' with your network password.
-            </p>
-        </div>
-                <div class="faq" onclick="toggleAnswer('q5')">
-            <h3>🔑 How do I access the NMU student portal?</h3>
-            <p class="answer" id="q5">
-                Go to <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> 
-                and log in using 'mandela\\s123456789' with your network password.
-            </p>
-        </div>
 
         <div class="faq" onclick="toggleAnswer('q4')">
-            <h3>📌 Are there any documents required for orientation to prove you're an NMU student?</h3>
+            <h3>🔑 What is the link to change my course at NMU?</h3>
             <p class="answer" id="q4">
+                You need to complete the "Change of Qualification Application Form" and submit it to your Faculty Administrative Officer. 
+                <br>Download the form <a href="https://www.mandela.ac.za/getmedia/933e1d71-573e-49e5-8300-1ff9ac7a10bf/08-CHANGE-OF-QUALIFICATION-APPLICATION-FORM?disposition=attachment" target="_blank">here</a>.
+            </p>
+        </div>
+
+        <div class="faq" onclick="toggleAnswer('q5')">
+            <h3>🔑 Which programmes are full at NMU?</h3>
+            <p class="answer" id="q5">
+                NMU has closed applications for 2025, and some programmes are full. They haven’t listed which ones, 
+                so check directly with NMU’s admissions office for availability. 
+                <a href="https://www.mandela.ac.za/study-at-mandela/application/apply-undergraduate" target="_blank">Check here</a>.
+            </p>
+        </div>
+
+        <div class="faq" onclick="toggleAnswer('q6')">
+            <h3>🔑 How do I access the NMU student portal?</h3>
+            <p class="answer" id="q6">
+                Visit <a href="https://students.mandela.ac.za" target="_blank">students.mandela.ac.za</a> 
+                and log in using 'mandela\\s123456789' with your network password.
+            </p>
+        </div>
+
+        <div class="faq" onclick="toggleAnswer('q7')">
+            <h3>📌 Are any documents required for orientation to prove you're an NMU student?</h3>
+            <p class="answer" id="q7">
                 No, nothing is required for you to attend.
             </p>
         </div>
 
-        <!-- Terms and Conditions Button at the Bottom -->
         <a href="term.html" class="terms-btn">📜 Terms and Conditions</a>
-
         <a href="index.html" class="back-btn">⬅ Back to Home</a>
     </div>
 
