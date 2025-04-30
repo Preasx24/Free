@@ -1,137 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ask a Question | D-TECH Student Info</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: #1f1f1f;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 198, 255, 0.5);
-            text-align: center;
-        }
-        h2 {
-            color: #00c6ff;
-            font-size: 24px;
-        }
-        .info {
-            font-size: 15px;
-            margin-bottom: 15px;
-            color: #bbb;
-        }
-        .step {
-            margin: 12px 0;
-            background: #282828;
-            padding: 12px;
-            border-radius: 5px;
-            font-size: 15px;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        textarea {
-            width: 100%;
-            height: 120px;
-            padding: 12px;
-            margin-top: 12px;
-            border: none;
-            border-radius: 5px;
-            background: #333;
-            color: #fff;
-            font-size: 16px;
-            resize: none;
-        }
-        .send-btn {
-            background: #00c6ff;
-            padding: 14px;
-            color: #000;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            margin-top: 12px;
-            transition: 0.3s;
-        }
-        .send-btn:hover {
-            background: #00a2d6;
-        }
-        .back-btn {
-            display: block;
-            background: #00c6ff;
-            padding: 12px;
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            text-align: center;
-            margin-top: 20px;
-            transition: 0.3s;
-        }
-        .back-btn:hover {
-            background: #00a2d6;
-        }
-    </style>
-    <script>
-    function sendEmail() {
-        var question = document.getElementById("userQuestion").value;
-        if (question.trim() === "") {
-            alert("❗ Please enter a question before sending.");
-            return;
-        }
-
-        // Ensure the question ends with a comma
-        if (!question.trim().endsWith(',')) {
-            question = question.trim() + ',';
-        }
-
-        var mailtoLink = "mailto:dtech2j@gmail.com?body=" + encodeURIComponent(question);
-        window.location.href = mailtoLink;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ask a Question | D-TECH Student Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
     }
-
-    function openAdAndRedirect() {
-        // Open the ad in a new tab first
-        window.open("https://conductorhimselfwhipped.com/spymr251ew?key=ce76edf7e5c6e4907177e712dc143365", "_blank");
-
-        // Delay the redirection by 2 seconds
-        setTimeout(function() {
-            window.location.href = "guides.html";
-        }, 2000); // 2000 milliseconds = 2 seconds
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 198, 255, 0.5);
     }
-</script>
+    h2 {
+      color: #00c6ff;
+      font-size: 24px;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+      font-size: 16px;
+    }
+    .send-btn {
+      background: #00c6ff;
+      padding: 14px;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: 0.3s;
+    }
+    .send-btn:hover {
+      background: #00a2d6;
+    }
+    .back-btn {
+      display: block;
+      background: #00c6ff;
+      padding: 12px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      text-align: center;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #00a2d6;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h2>❓ Ask a Question</h2>
+    <p>Submit your question below and we'll respond via email.</p>
 
-    <div class="container">
-        <h2>❓ Ask a Question</h2>
-        <p class="info">Got a question? Submit it below, and we'll get back to you!</p>
+    <form action="https://formsubmit.co/jonasmochebane@gmail.com" method="POST">
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Type your question here..." required></textarea>
 
-        <div class="step">📌 **Step 1:** Type your question below.</div>
-        <div class="step">📩 **Step 2:** Press "Send Question".</div>
-        <div class="step">📧 **Step 3:** Your email app will **open automatically** with your question pre-filled.</div>
-        <div class="step">✅ **Step 4:** Simply **press send** in your email app.</div>
-        <div class="step">📢 **Note:** You will receive a response **directly in your email**. Your question and answer will also be **added to the website** to help others!</div>
+      <!-- Redirect after submit -->
+      <input type="hidden" name="_redirect" value="https://www.dtech-services.co.za/thankyou.html">
 
-        <textarea id="userQuestion" placeholder="Type your question here..."></textarea><br>
-        <button class="send-btn" onclick="sendEmail(); openAdAndRedirect();">📩 Send Question</button>
+      <!-- Disable CAPTCHA -->
+      <input type="hidden" name="_captcha" value="false">
 
-        <a href="guides.html" class="back-btn" onclick="openAdAndRedirect();">⬅ Back to Guides</a>
-    </div>
+      <button type="submit" class="send-btn">📩 Send Question</button>
+    </form>
 
+    <a href="guides.html" class="back-btn">⬅ Back to Guides</a>
+  </div>
 </body>
 </html>
