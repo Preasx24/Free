@@ -76,27 +76,22 @@
     <p>Submit your question below and we'll respond via email.</p>
 
     <form id="questionForm" action="https://formsubmit.co/jonasmochebane@gmail.com" method="POST">
-      <!-- Form Fields -->
       <input type="email" name="email" placeholder="Your email" required>
       <textarea name="message" placeholder="Type your question here..." required></textarea>
 
-      <!-- Hidden Settings -->
-      <input type="hidden" name="_redirect" value="https://www.dtech-services.co.za/thankyou.html">
       <input type="hidden" name="_captcha" value="false">
 
-      <!-- Submit Button -->
       <button type="submit" class="send-btn">📩 Send Question</button>
     </form>
 
     <a href="guides.html" class="back-btn">⬅ Back to Guides</a>
   </div>
 
-  <!-- Fallback Redirect in case FormSubmit fails -->
   <script>
     document.getElementById("questionForm").addEventListener("submit", function () {
       setTimeout(function () {
         window.location.href = "https://www.dtech-services.co.za/thankyou.html";
-      }, 5000); // fallback after 5 seconds
+      }, 1000); // redirect after 1 second
     });
   </script>
 </body>
