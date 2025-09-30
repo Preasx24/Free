@@ -3,48 +3,17 @@
 <head>
     <meta name="monetag" content="9d6cc85df2a817b4449f426a23933d6a">
     <meta name="google-site-verification" content="OpMUi8ebuzFZJyDHFw3Tsk303pel-c1OMQ3a3acq39dA" />
-    <!-- SEO & Metadata for Google (Preasx24) -->
     <title>NMU Student Guides | DTECH Student Information Hub</title>
-    <meta name="description" content="Comprehensive NMU student guides covering orientation, NSFAS, accommodation, course changes, and academic resources. Get answers to frequently asked questions." />
-    <meta name="keywords" content="NMU, Nelson Mandela University, student guides, orientation, NSFAS, accommodation, course registration, student portal" />
+    <meta name="description" content="Comprehensive NMU student guides covering orientation, NSFAS, accommodation, course changes, and academic resources." />
+    <meta name="keywords" content="NMU, Nelson Mandela University, student guides, orientation, NSFAS, accommodation, course registration" />
     <meta name="author" content="DTECH" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://info.dtech24.co.za/" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="NMU Student Guides | DTECH Student Information Hub" />
-    <meta property="og:description" content="Comprehensive NMU student guides covering orientation, NSFAS, accommodation, course changes, and academic resources." />
-    <meta property="og:image" content="https://preasx24.co.za/images/preasx24.jpg" />
-    <meta property="og:url" content="https://info.dtech24.co.za" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="DTECH Info" />
-
-    <!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="NMU Student Guides" />
-    <meta name="twitter:description" content="Get answers to your NMU questions about orientation, NSFAS, accommodation, and more." />
-    <meta name="twitter:image" content="https://preasx24.co.za/images/preasx24.jpg" />
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #1e40af;
-            --accent: #059669;
-            --text-light: #f8fafc;
-            --text-muted: #94a3b8;
-            --dark-bg: #0f172a;
-            --darker-bg: #0a0f1c;
-            --card-bg: #1e293b;
-            --card-hover: #334155;
-            --border: #334155;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -52,193 +21,191 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
-            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f172a;
+            color: #fff;
             line-height: 1.6;
             min-height: 100vh;
             padding: 0;
         }
 
         .header {
-            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--primary-light) 100%);
-            padding: 30px 20px;
+            background: #1e293b;
+            padding: 20px;
             text-align: center;
-            border-bottom: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+            border-bottom: 1px solid #334155;
         }
 
         .logo {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .logo-icon {
-            background: var(--primary);
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-        }
-
-        .logo-icon i {
-            color: var(--text-light);
-            font-size: 20px;
-        }
-
-        .logo-text {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-light);
-        }
-
-        .header h1 {
-            font-size: 32px;
-            font-weight: 700;
             margin-bottom: 10px;
         }
 
+        .logo-icon {
+            background: #3b82f6;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+
+        .logo-icon i {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
         .header p {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 600px;
+            color: #94a3b8;
+            font-size: 14px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         .container {
             max-width: 800px;
-            margin: 40px auto;
+            margin: 20px auto;
             padding: 0 20px;
         }
 
-        .resource-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
+        .ask-section {
+            margin-bottom: 30px;
         }
 
-        .resource-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-            background: var(--card-hover);
+        .ask-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #3b82f6;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .ask-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        .ask-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .resource-card {
+            background: #1e293b;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #334155;
         }
 
         .resource-card h3 {
             display: flex;
             align-items: center;
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: var(--text-light);
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #fff;
         }
 
         .resource-card h3 i {
-            margin-right: 12px;
-            color: var(--primary);
-            width: 24px;
-            text-align: center;
+            margin-right: 10px;
+            color: #3b82f6;
         }
 
         .resource-card p {
-            color: var(--text-muted);
-            margin-bottom: 15px;
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
 
         .resource-card a {
             display: inline-flex;
             align-items: center;
-            color: var(--primary);
+            color: #3b82f6;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .resource-card a:hover {
-            color: var(--accent);
-            text-decoration: underline;
-        }
-
-        .resource-card a i {
-            margin-left: 8px;
             font-size: 14px;
         }
 
+        .resource-card a:hover {
+            text-decoration: underline;
+        }
+
         .faq-section {
-            margin-top: 40px;
+            margin-top: 30px;
         }
 
         .section-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
         }
 
         .section-title i {
-            margin-right: 12px;
-            color: var(--primary);
+            margin-right: 10px;
+            color: #3b82f6;
         }
 
         .faq-item {
-            background: var(--card-bg);
-            border-radius: 10px;
-            margin-bottom: 15px;
+            background: #1e293b;
+            border-radius: 8px;
+            margin-bottom: 10px;
             overflow: hidden;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background: var(--card-hover);
+            border: 1px solid #334155;
         }
 
         .faq-question {
-            padding: 20px;
+            padding: 16px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
+            font-weight: 500;
         }
 
         .faq-question h3 {
-            font-size: 16px;
+            font-size: 15px;
             margin: 0;
             display: flex;
             align-items: flex-start;
         }
 
         .faq-question i:first-child {
-            margin-right: 12px;
-            color: var(--primary);
+            margin-right: 10px;
+            color: #3b82f6;
             flex-shrink: 0;
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
         .faq-question .toggle-icon {
-            color: var(--text-muted);
+            color: #94a3b8;
             transition: transform 0.3s ease;
         }
 
@@ -258,13 +225,14 @@
         }
 
         .answer-content {
-            padding: 0 20px 20px 55px;
-            color: var(--text-muted);
-            line-height: 1.7;
+            padding: 0 16px 16px 42px;
+            color: #94a3b8;
+            line-height: 1.6;
+            font-size: 14px;
         }
 
         .answer-content a {
-            color: var(--primary);
+            color: #3b82f6;
             text-decoration: none;
         }
 
@@ -272,83 +240,63 @@
             text-decoration: underline;
         }
 
-        .action-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .btn {
+        .back-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 20px;
-            border-radius: 8px;
-            font-weight: 600;
+            background: #334155;
+            color: white;
+            padding: 12px 20px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            text-align: center;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-top: 25px;
+            transition: background 0.3s ease;
         }
 
-        .btn-primary {
-            background: var(--primary);
+        .back-btn:hover {
+            background: #475569;
+            text-decoration: none;
             color: white;
         }
 
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-secondary {
-            background: var(--card-bg);
-            color: var(--text-light);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background: var(--card-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn i {
-            margin-right: 10px;
+        .back-btn i {
+            margin-right: 8px;
         }
 
         .footer {
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-            border-top: 1px solid var(--border);
-            color: var(--text-muted);
-            font-size: 14px;
+            padding: 25px 20px;
+            margin-top: 40px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 13px;
         }
 
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 26px;
+                font-size: 20px;
             }
             
             .header p {
-                font-size: 16px;
+                font-size: 13px;
             }
             
             .container {
-                margin: 20px auto;
+                margin: 15px auto;
             }
             
-            .action-buttons {
-                grid-template-columns: 1fr;
+            .ask-btn {
+                font-size: 16px;
+                padding: 14px 20px;
             }
             
             .faq-question h3 {
-                font-size: 15px;
+                font-size: 14px;
             }
             
             .answer-content {
-                padding: 0 15px 15px 15px;
+                padding: 0 12px 12px 12px;
             }
         }
     </style>
@@ -367,12 +315,18 @@
     </div>
 
     <div class="container">
-        <div class="resource-card">
-            <h3><i class="fas fa-book"></i> Textbook Resources</h3>
-            <p>Access required textbooks and academic resources for your courses at NMU.</p>
-            <a href="https://www.dtech-services.co.za/text.html" target="_blank">
-                Browse Textbooks <i class="fas fa-external-link-alt"></i>
+        <div class="ask-section">
+            <a href="ask.html" class="ask-btn">
+                <i class="fas fa-question-circle"></i> Ask a Question
             </a>
+
+            <div class="resource-card">
+                <h3><i class="fas fa-book"></i> Textbook Resources</h3>
+                <p>Access required textbooks for your courses at NMU.</p>
+                <a href="https://www.dtech-services.co.za/text.html" target="_blank">
+                    Browse Textbooks <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
         </div>
 
         <div class="faq-section">
@@ -550,14 +504,9 @@
             </div>
         </div>
 
-        <div class="action-buttons">
-            <a href="ask.html" class="btn btn-primary">
-                <i class="fas fa-question-circle"></i> Ask a Question
-            </a>
-            <a href="index.html" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i> Back to Home
-            </a>
-        </div>
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
     </div>
 
     <div class="footer">
